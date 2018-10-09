@@ -1,0 +1,38 @@
+<jhi-page-ribbon></jhi-page-ribbon>
+<div>
+    <router-outlet name="navbar"></router-outlet>
+</div>
+<div class="side-menu sidebar-inverse">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="side-menu-container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">
+                    <div class="icon"><img src="https://www.jhipster.tech/images/logo/logo-jhipster.svg" height="50px"></div>
+                    <div class="title brand">JHipster </div>
+                </a>
+                <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                    <i class="fa fa-times icon"></i>
+                </button>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#">lien</a></li>
+                <li><a href="#">lien</a></li>
+                <li><a href="#">lien</a></li>
+                <li><a href="#">lien</a></li>
+                <li><a href="#">lien</a></li>
+                <li><a href="#">lien</a></li>
+                <li><a href="#">lien</a></li>
+                <li><a href="#">lien</a></li>
+                <li><a href="#">lien</a></li>
+                <li><a href="#">lien</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="container-fluid">
+    <div class="card jh-card">
+        <router-outlet></router-outlet>
+        <router-outlet name="popup"></router-outlet>
+    </div>
+    <jhi-footer></jhi-footer>
+</div>
