@@ -223,6 +223,14 @@ ui bootstrap tweaks
     white-space: nowrap;
 }
 
+/* ==========================================================================
+ui bootstrap tweaks
+========================================================================== */
+.myarticle {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
 /* jhipster-needle-scss-add-main JHipster will add new css style */
 /* ==========================================================================
 app-container, side-menu
@@ -230,145 +238,181 @@ app-container, side-menu
 .app-container {
     min-height: 100%;
     position: relative;
-    padding-bottom: 0px; }
-    .app-container .app-footer {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      left: 65px;
-      -webkit-transition: all 0.25s;
-      transition: all 0.25s;
-      font-size: 12px;
-      font-family: 'Roboto Condensed', sans-serif; }
-      .app-container .app-footer .wrapper {
-        padding: 10px 35px;
-        padding-left: 25px;
-        height: 50px;
-        line-height: 50px;
-        vertical-align: middle; }
-    .app-container .content-container {
-      margin-right: 0;
-      margin-left: 0; }
-      .app-container .content-container .side-menu {
-        overflow-y: none;
-        z-index: 100000;
-        position: fixed;
-        width: 60px;
-        background-color: #b95c38cc;
-        height: 100%;
-        -webkit-transition: all 0.25s;
-        transition: all 0.25s; }
-        .app-container .content-container .side-menu:hover {
-          overflow-y: auto; }
-        .app-container .content-container .side-menu .navbar-header {
-          width: 100%;
-          border-bottom: 0px solid #e7e7e7; }
-          .app-container .content-container .side-menu .navbar-header .navbar-brand {
-            width: 455px;
-            line-height: 60px;
-            height: 60px;
-            padding: 0;
-            width: 100%;
-            overflow: hidden;
-            font-family: 'Roboto Condensed', sans-serif; }
-            .app-container .content-container .side-menu .navbar-header .navbar-brand .icon {
-              width: 60px;
-              text-align: center;
-              display: inline-block; }
-            .app-container .content-container .side-menu .navbar-header .navbar-brand .title {
-              margin-left: -10px;
-              display: none; }
-          .app-container .content-container .side-menu .navbar-header .navbar-expand-toggle {
-            position: absolute;
-            right: 0;
-            width: 60px;
-            height: 60px;
-            background-color: transparent;
-            border: 0px;
-            -moz-transition: all 0.25s linear;
-            -webkit-transition: all 0.25s linear;
-            transition: all 0.25s linear;
-            opacity: 0.75; }
-        .app-container .content-container .side-menu .navbar {
-          border: none;
-          padding-left: 0px; }
-        .app-container .content-container .side-menu .navbar-nav li {
-          display: block;
-          width: 100%;
-          overflow: hidden; }
-          .app-container .content-container .side-menu .navbar-nav li a {
-            font-family: 'Roboto Condensed', sans-serif;
-            padding: 0 10px 0 10px;
-            height: 46px;
-            line-height: 46px;
-            display: block;
-            white-space: nowrap; }
-            .app-container .content-container .side-menu .navbar-nav li a .icon {
-              margin-left: 0px;
-              width: 38px;
-              text-align: center;
-              font-size: 1.1em;
-              display: inline-block; }
-            .app-container .content-container .side-menu .navbar-nav li a .title {
-              width: 0px;
-              white-space: nowrap;
-              padding-left: 6px;
-              display: none; }
-        .app-container .content-container .side-menu .navbar-nav li.dropdown {
-          border: 0;
-          margin-bottom: 0;
-          border-radius: 0;
-          box-shadow: none; }
-          .app-container .content-container .side-menu .navbar-nav li.dropdown ul li a {
-            height: 44px;
-            line-height: 44px;
-            vertical-align: middle;
-            padding: 0em 1.2em; }
-          .app-container .content-container .side-menu .navbar-nav li.dropdown > a:after {
-            content: "";
-            position: absolute;
-            right: 1em; }
-        .app-container .content-container .side-menu .navbar-nav .panel-collapse.in {
-          display: none; }
-      .app-container .content-container .side-menu:hover {
-        width: 300px; }
-        .app-container .content-container .side-menu:hover .navbar-header .navbar-brand .title {
-          display: inline-block; }
-        .app-container .content-container .side-menu:hover .navbar-nav li a .title {
-          width: 192px;
-          display: inline-block; }
-        .app-container .content-container .side-menu:hover .navbar-nav li.dropdown > a:after {
-          font-family: FontAwesome;
-          content: "\f107";
-          position: absolute;
-          right: 1em; }
-        .app-container .content-container .side-menu:hover .panel-collapse.in {
-          display: block; }
-      .app-container .content-container .side-body {
-        padding-top: 70px; }
-      .app-container .content-container .side-body.padding-top {
-        padding-top: 84px; }
-  
-  .app-container.expanded {
-    overflow: hidden; }
-    .app-container.expanded .app-footer {
-      left: 300px; }
-      .app-container.expanded .app-footer .wrapper {
-        padding-left: 25px; }
-    .app-container.expanded .content-container .navbar-top {
-      padding-left: 300px; }
-    .app-container.expanded .content-container .side-menu {
-      width: 300px;
-      overflow-y: auto; }
-      .app-container.expanded .content-container .side-menu .navbar-header .navbar-brand .title {
-        display: inline-block; }
-      .app-container.expanded .content-container .side-menu .navbar-nav li a .title {
-        display: inline-block; }
-      .app-container.expanded .content-container .side-menu .navbar-nav li .panel-collapse.in {
-        display: block; }
-      .app-container.expanded .content-container .side-menu .navbar-nav li.dropdown > a:after {
-        font-family: FontAwesome;
-        content: "\f107";
-        position: absolute;
-        right: 1em; }
+    padding-bottom: 0px;
+}
+.app-container .app-footer {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 65px;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+    font-size: 12px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.app-container .app-footer .wrapper {
+    padding: 10px 35px;
+    padding-left: 25px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+.app-container .content-container {
+    margin-right: 0;
+    margin-left: 0;
+}
+.app-container .content-container .side-menu {
+    overflow-y: none;
+    z-index: 100000;
+    position: fixed;
+    width: 60px;
+    background-color: #b95c38cc;
+    height: 100%;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s;
+}
+.app-container .content-container .side-menu:hover {
+    overflow-y: auto;
+}
+.app-container .content-container .side-menu .navbar-header {
+    width: 100%;
+    border-bottom: 0px solid #e7e7e7;
+}
+.app-container .content-container .side-menu .navbar-header .navbar-brand {
+    width: 455px;
+    line-height: 60px;
+    height: 60px;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.app-container .content-container .side-menu .navbar-header .navbar-brand .icon {
+    width: 60px;
+    text-align: center;
+    display: inline-block;
+}
+.app-container .content-container .side-menu .navbar-header .navbar-brand .title {
+    margin-left: -10px;
+    display: none;
+}
+.app-container .content-container .side-menu .navbar-header .navbar-expand-toggle {
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 0px;
+    -moz-transition: all 0.25s linear;
+    -webkit-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+    opacity: 0.75;
+}
+.app-container .content-container .side-menu .navbar {
+    border: none;
+    padding-left: 0px;
+}
+.app-container .content-container .side-menu .navbar-nav li {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+.app-container .content-container .side-menu .navbar-nav li a {
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 0 10px 0 10px;
+    height: 46px;
+    line-height: 46px;
+    display: block;
+    white-space: nowrap;
+}
+.app-container .content-container .side-menu .navbar-nav li a .icon {
+    margin-left: 0px;
+    width: 38px;
+    text-align: center;
+    font-size: 1.1em;
+    display: inline-block;
+}
+.app-container .content-container .side-menu .navbar-nav li a .title {
+    width: 0px;
+    white-space: nowrap;
+    padding-left: 6px;
+    display: none;
+}
+.app-container .content-container .side-menu .navbar-nav li.dropdown {
+    border: 0;
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+.app-container .content-container .side-menu .navbar-nav li.dropdown ul li a {
+    height: 44px;
+    line-height: 44px;
+    vertical-align: middle;
+    padding: 0em 1.2em;
+}
+.app-container .content-container .side-menu .navbar-nav li.dropdown > a:after {
+    content: '';
+    position: absolute;
+    right: 1em;
+}
+.app-container .content-container .side-menu .navbar-nav .panel-collapse.in {
+    display: none;
+}
+.app-container .content-container .side-menu:hover {
+    width: 300px;
+}
+.app-container .content-container .side-menu:hover .navbar-header .navbar-brand .title {
+    display: inline-block;
+}
+.app-container .content-container .side-menu:hover .navbar-nav li a .title {
+    width: 192px;
+    display: inline-block;
+}
+.app-container .content-container .side-menu:hover .navbar-nav li.dropdown > a:after {
+    font-family: FontAwesome;
+    content: '\f107';
+    position: absolute;
+    right: 1em;
+}
+.app-container .content-container .side-menu:hover .panel-collapse.in {
+    display: block;
+}
+.app-container .content-container .side-body {
+    padding-top: 70px;
+}
+.app-container .content-container .side-body.padding-top {
+    padding-top: 84px;
+}
+
+.app-container.expanded {
+    overflow: hidden;
+}
+.app-container.expanded .app-footer {
+    left: 300px;
+}
+.app-container.expanded .app-footer .wrapper {
+    padding-left: 25px;
+}
+.app-container.expanded .content-container .navbar-top {
+    padding-left: 300px;
+}
+.app-container.expanded .content-container .side-menu {
+    width: 300px;
+    overflow-y: auto;
+}
+.app-container.expanded .content-container .side-menu .navbar-header .navbar-brand .title {
+    display: inline-block;
+}
+.app-container.expanded .content-container .side-menu .navbar-nav li a .title {
+    display: inline-block;
+}
+.app-container.expanded .content-container .side-menu .navbar-nav li .panel-collapse.in {
+    display: block;
+}
+.app-container.expanded .content-container .side-menu .navbar-nav li.dropdown > a:after {
+    font-family: FontAwesome;
+    content: '\f107';
+    position: absolute;
+    right: 1em;
+}

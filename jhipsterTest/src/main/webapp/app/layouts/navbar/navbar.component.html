@@ -10,6 +10,14 @@
     </div>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
+            <div class="col-lg-6">
+                <li class = "input-group">
+                    <input type="text" class="form-control" placeholder= "Search for...">
+                    <span class = "input-group-btn">
+                        <button class = "btn btn-xs" type="button">Go!</button>
+                    </span>
+                </li>
+            </div>
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
                     <span>
