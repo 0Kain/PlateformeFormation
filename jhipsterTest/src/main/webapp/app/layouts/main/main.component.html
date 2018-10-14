@@ -1,38 +1,96 @@
 <jhi-page-ribbon></jhi-page-ribbon>
 <div>
-    <router-outlet name="navbar"></router-outlet>
+        <router-outlet name="navbar"></router-outlet>
 </div>
-<div class="side-menu sidebar-inverse">
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="side-menu-container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/">
-                    <div class="icon"><img src="https://www.jhipster.tech/images/logo/logo-jhipster.svg" height="50px"></div>
-                    <div class="title brand">JHipster </div>
-                </a>
-                <button type="button" class="navbar-expand-toggle pull-right visible-xs">
-                    <i class="fa fa-times icon"></i>
-                </button>
-            </div>
-            <ul class="nav navbar-nav">
-                <li><a href="#">lien</a></li>
-                <li><a href="#">lien</a></li>
-                <li><a href="#">lien</a></li>
-                <li><a href="#">lien</a></li>
-                <li><a href="#">lien</a></li>
-                <li><a href="#">lien</a></li>
-                <li><a href="#">lien</a></li>
-                <li><a href="#">lien</a></li>
-                <li><a href="#">lien</a></li>
-                <li><a href="#">lien</a></li>
-            </ul>
+
+<div class = "content-container">
+    <div class="col-sm-2 side-menu sidebar-inverse ">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="side-menu-container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">
+                            <div class="title brand">JHipster </div>
+                        </a>
+                        <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                            <i class="fa fa-times icon"></i>
+                        </button>
+                    </div>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#">lien</a></li>
+                        <li><a href="#">lien</a></li>
+                        <li><a href="#">lien</a></li>
+                        <li><a href="#">lien</a></li>
+                        <li><a href="#">lien</a></li>
+                        <li><a href="#">lien</a></li>
+                        <li><a href="#">lien</a></li>
+                        <li><a href="#">lien</a></li>
+                        <li><a href="#">lien</a></li>
+                        <li><a href="#">lien</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </nav>
-</div>
-<div class="container-fluid">
-    <div class="card jh-card">
-        <router-outlet></router-outlet>
-        <router-outlet name="popup"></router-outlet>
+    <header class = "row">
+        <div class = "offset-sm-1 col-sm-12">
+            Entetete
+        </div>
+    </header>
+    <div class = "row">
+        <section class = "offset-sm-2 col-sm-10">
+            Section
+            <div class = "row">
+                <div class = "col-sm-8">
+                    <div class = "row">
+                        <article class = "col-sm-6">
+                            Article
+                        </article>
+                        <article class = "col-sm-6">
+                            Article
+                        </article>
+                        <article class = "col-sm-6">
+                             Article
+                        </article>
+                        <article class = "col-sm-6">
+                             Article
+                        </article>
+                        
+                    </div>
+                </div>
+                <div class = "col-sm-2">
+                    <div class = "row">
+                        <aside class = "col-sm-12">
+                            Aside1
+                        </aside>
+                        <aside class = "col-sm-12">
+                             Aside2
+                        </aside>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section class = "offset-sm-2 col-sm-10">
+            Section
+            <div class="row">
+                <article class = "col-sm-10">
+                    Article
+                </article>
+            </div>     
+        </section>
+        
     </div>
-    <jhi-footer></jhi-footer>
+    <footer class = "row">
+            <div class = "offset-sm-1 col-sm-12">
+                Pied de page
+            </div>
+    </footer>
+    </div>
+   <!-- <div class="container-fluid">
+        <div class="card jh-card">
+                <router-outlet></router-outlet>
+                <router-outlet name="popup"></router-outlet>
+        </div>
+    </div> -->
 </div>
+
+    
