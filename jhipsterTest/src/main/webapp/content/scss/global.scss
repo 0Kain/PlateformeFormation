@@ -85,6 +85,7 @@ Generic styles
 
 .footer {
     border-top: 1px solid rgba(0, 0, 0, 0.125);
+    text-align: center;
 }
 
 .hand,
@@ -294,7 +295,8 @@ app-container, side-menu
     display: inline-block;
 }
 .app-container .content-container .side-menu .navbar-header .navbar-brand .title {
-    margin-left: -10px;
+    /*margin-left: -10px;*/
+    color: #0b07a4;
     display: none;
 }
 .app-container .content-container .side-menu .navbar-header .navbar-expand-toggle {
@@ -325,6 +327,7 @@ app-container, side-menu
     line-height: 46px;
     display: block;
     white-space: nowrap;
+    color: #0b07a4;
 }
 .app-container .content-container .side-menu .navbar-nav li a .icon {
     margin-left: 0px;
