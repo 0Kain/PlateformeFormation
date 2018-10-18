@@ -24,7 +24,7 @@
                 <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                         <a class="nav-link" routerLink="#" (click)="collapseNavbar()">
                             <span>
-                                <fa-icon [icon]="'book'"></fa-icon>
+                                <fa-icon [icon]="'archive'"></fa-icon>
                                 <span>Archive</span>
                             </span>
                         </a>
@@ -137,6 +137,11 @@
                             <fa-icon [icon]="'wrench'" [fixedWidth]="true"></fa-icon>
                             <span>Settings</span>
                         </a>
+                    </li>
+                    <li *ngSwitchCase="true">
+                            <a class="dropdown-item" routerLink="settings" routerLinkActive="active" (click)="collapseNavbar()">
+                                <span>Tableau de bord</span>
+                            </a>
                     </li>
                     <li *ngSwitchCase="true">
                         <a class="dropdown-item" routerLink="password" routerLinkActive="active" (click)="collapseNavbar()">

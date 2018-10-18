@@ -21,6 +21,7 @@ import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
 import { ArticleComponent } from './article/article.component';
+import { ActuBoxComponent } from './home/actu-box/actu-box.component';
 
 @NgModule({
     imports: [
@@ -34,7 +35,15 @@ import { ArticleComponent } from './article/article.component';
         PlatformationEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, ArticleComponent],
+    declarations: [
+        JhiMainComponent,
+        NavbarComponent,
+        ErrorComponent,
+        PageRibbonComponent,
+        FooterComponent,
+        ArticleComponent,
+        ActuBoxComponent
+    ],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
