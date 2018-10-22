@@ -1,12 +1,12 @@
-<div class="card " style="max-width: 18rem;">
-  <div class="card-header text-white bg-dark mb-6">{{infoActu.actuHeader}}</div>
+<div class="card dimCard">
+  <div class="card-header text-white bg-dark mb-6 md-8">{{infoActu?.actuHeader}}</div>
   <!--<img class="card-img-top" src="D:\Images\bread-small.jpg" alt="Card image cap">-->
   <img class="card-img-top" src="C:\Users\Utilisateur\Pictures\bread-small.jpg" alt="Card image cap">
-  <div class="card-body">
-    <div *ngFor = "let actuCateg of actuCategs">
-        <span class="badge badge-primary">{{actuCateg}}</span>
-    </div>
-    <p class="card-text">{{infoActu.actuText}}</p>
-    <p class="card-text"><small class="text-muted">{{infoActu.actuDate}}</small></p>
+  <div class="card-body paddingCardBox">
+      <div class= "d-inline" *ngFor = "let actuCateg of infoActu?.actuCategs">
+          <span class="badge badge-primary marginCateg">{{actuCateg.categName}}</span>
+      </div>
+    <p class="card-text marginText">{{ infoActu?.actuText }}</p>
+    <p class="card-text marginText"><small class="text-muted">{{infoActu?.actuDate}}</small></p>
   </div>
 </div>

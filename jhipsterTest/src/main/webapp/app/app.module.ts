@@ -35,15 +35,7 @@ import { ActuBoxComponent } from './home/actu-box/actu-box.component';
         PlatformationEntityModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
-    declarations: [
-        JhiMainComponent,
-        NavbarComponent,
-        ErrorComponent,
-        PageRibbonComponent,
-        FooterComponent,
-        ArticleComponent,
-        ActuBoxComponent
-    ],
+    declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent, ArticleComponent],
     providers: [
         {
             provide: HTTP_INTERCEPTORS,
