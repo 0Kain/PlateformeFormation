@@ -6,6 +6,7 @@ import '../content/scss/vendor.scss';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
+    faArchive,
     faBookOpen,
     faCalendar,
     faUser,
@@ -45,6 +46,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 // Adds the SVG icon to the library so you can use it in your page
+library.add(faArchive);
 library.add(faBookOpen);
 library.add(faCalendar);
 library.add(faUser);
