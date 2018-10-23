@@ -23,6 +23,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
 import { ArticleComponent } from './article/article.component';
 import { ActuBoxComponent } from './home/actu-box/actu-box.component';
 import { BibliothequeComponent } from './bibliotheque/bibliotheque.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
 
 @NgModule({
     imports: [
@@ -43,7 +44,8 @@ import { BibliothequeComponent } from './bibliotheque/bibliotheque.component';
         PageRibbonComponent,
         FooterComponent,
         ArticleComponent,
-        BibliothequeComponent
+        BibliothequeComponent,
+        CreateArticleComponent
     ],
     providers: [
         {
