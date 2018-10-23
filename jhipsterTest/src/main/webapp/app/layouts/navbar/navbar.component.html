@@ -1,23 +1,48 @@
-<nav class="navbar navbar-inverse navbar-fixed-top navbar-top navbar-dark navbar-expand-md jh-navbar">
+<nav class="navbar navbar-dark navbar-expand-lg jh-navbar">
     <div class="jh-logo-container float-left">
+        <!--
         <a class="jh-navbar-toggler d-lg-none float-right" href="javascript:void(0);" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleNavbar()">
             <fa-icon [icon]="'bars'"></fa-icon>
         </a>
+        -->
         <a class="navbar-brand logo float-left" routerLink="/" (click)="collapseNavbar()">
             <!--<span class="logo-img"></span>-->
             <span class="navbar-title">Platformation</span> <span class="navbar-version">{{version}}</span>
         </a>
     </div>
+
+    <div class="navbar-collapse collapse order-md-0"> 
+            <ul class="navbar-nav mr-auto"> 
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="#" (click)="collapseNavbar()">
+                        <span>
+                            <fa-icon [icon]="'book'"></fa-icon>
+                            <span>Cours</span>
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="nav-link" routerLink="#" (click)="collapseNavbar()">
+                            <span>
+                                <fa-icon [icon]="'archive'"></fa-icon>
+                                <span>Archive</span>
+                            </span>
+                        </a>
+                    </li>
+            </ul> 
+    </div> 
+
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="isAuthenticated()">
         <ul class="navbar-nav ml-auto">
-            <div class="col-lg-6">
-                <li class = "input-group">
-                    <input type="text" class="form-control" placeholder= "Search for...">
-                    <span class = "input-group-btn">
-                        <button class = "btn btn-xs" type="button">Go!</button>
-                    </span>
-                </li>
-            </div>
+
+
+            <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            
+           
+
             <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
                     <span>
@@ -26,14 +51,7 @@
                     </span>
                 </a>
             </li>
-            <!--<li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-                <a class="nav-link" routerLink="#" (click)="collapseNavbar()">
-                    <span>
-                        <fa-icon [icon]="'book'"></fa-icon>
-                        <span>Test</span>
-                    </span>
-                </a>
-            </li>-->
+
             <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
             <li *ngSwitchCase="true" ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
@@ -119,6 +137,11 @@
                             <fa-icon [icon]="'wrench'" [fixedWidth]="true"></fa-icon>
                             <span>Settings</span>
                         </a>
+                    </li>
+                    <li *ngSwitchCase="true">
+                            <a class="dropdown-item" routerLink="settings" routerLinkActive="active" (click)="collapseNavbar()">
+                                <span>Tableau de bord</span>
+                            </a>
                     </li>
                     <li *ngSwitchCase="true">
                         <a class="dropdown-item" routerLink="password" routerLinkActive="active" (click)="collapseNavbar()">
