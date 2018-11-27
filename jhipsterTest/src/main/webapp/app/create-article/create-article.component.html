@@ -1,0 +1,19 @@
+<form name="form" role="form" (ngSubmit)="validateArticle()"  #registerForm="ngForm">
+  <section class = "offset-md-1 col-md-11">
+    <p>Veuillez saisir le titre de votre article : </p>
+    <input class="form-control" type="text" id="title"><br>
+    <p>Veuillez définir votre catégorie : </p>
+    <input class="form-control" type="text" id="topics"><br>
+    <p>Veuillez saisir le contenu : </p>
+    <textarea class="form-control" rows="20" id="content"></textarea><br>
+
+    <div class="alert alert-success" id="createSuccess">
+      <strong>Creation successful!</strong>
+    </div>
+    <div class="alert alert-danger" id="createError">
+      <strong>Creation failed!</strong> Please try again later.
+    </div>
+    <button type="submit" class="btn btn-primary" id="createButton">Créer</button>
+    
+  </section>
+</form>

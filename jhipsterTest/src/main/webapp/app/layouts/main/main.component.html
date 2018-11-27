@@ -1,0 +1,44 @@
+<jhi-page-ribbon></jhi-page-ribbon>
+<div>
+        <router-outlet name="navbar"></router-outlet>
+</div>
+
+<div class = "content-container">
+    <div class="col-sm-2 side-menu sidebar-inverse ">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="side-menu-container">
+                <div class="navbar-header">
+                    <a class="navbar-brand nav-link" routerLink="/">
+                        <div class="title brand"> Platformation </div>
+                    </a>
+                    <button type="button" class="navbar-expand-toggle pull-right visible-xs">
+                        <i class="fa fa-times icon"></i>
+                    </button>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">lien</a></li>
+                    <li><a href="#">lien</a></li>
+                    <li><a href="#">lien</a></li>
+                    <li><a href="#">lien</a></li>
+                    <li><a href="#">lien</a></li>
+                    <li><a href="#">lien</a></li>
+                    <li><a href="#">lien</a></li>
+                    <li><a href="#">lien</a></li>
+                    <li><a href="#">lien</a></li>
+                    <li><a href="#">lien</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+   
+    <div class="container-fluid">
+        <div class="card jh-card">
+            <router-outlet></router-outlet>
+            <router-outlet name="popup"></router-outlet>
+        </div>
+    </div>
+</div>
+<jhi-footer></jhi-footer>
+
+
+    

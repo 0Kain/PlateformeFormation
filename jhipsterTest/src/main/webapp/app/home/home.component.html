@@ -1,0 +1,65 @@
+<header class = "row">
+    <div class = "col-md-12">
+        Entetete
+    </div>
+</header>
+<div class = "row">
+        <section class = "offset-md-1 col-md-11">
+                Section 1
+                <div class="row">
+                    <article class = "col-md-12">
+                            <div class="card-deck" >
+                                <div class= "d-inline" *ngFor = "let actuBoxComponent of infosActus">
+                                    <jhi-actu-box [actuBox] = actuBoxComponent> </jhi-actu-box>
+                                </div>     
+                            </div>
+                    </article>
+                </div> 
+            </section>
+            <!--      
+            <article class = "col-md-4 ">
+                <div class = "row content-item">
+                    <div class = "col-md-4" style="padding-left: 0px; padding-right: 0px;">
+                        <a href="#">
+                            <img class= "content-img" src="C:\Users\Utilisateur\Pictures\bread-small.jpg" alt>
+                        </a>
+                    </div>
+                    <div class = "col-md-8 ">
+                        <div class = "row">
+                            <div class = "col-md-12">
+                                <a href= "#" title = "Rennes ouvre une boulangerie">
+                                    <h3 class = "content-title">Rennes ouvre une boulangerie...</h3>
+                                </a>
+                                <p class = "content-description">
+                                    Le pain est frais
+                                </p>
+                            </div>
+                    </div>
+                    </div>
+                </div>
+            
+
+        
+            </article>
+                        <aside class = "col-md-12">
+                                Aside2
+                        </aside>
+                    </div>     
+                </div>
+            
+        </div>
+    </div>
+    -->
+    <section class = "offset-md-1 col-md-11">
+        Section 2
+        <div class="row">
+            <article class = "col-md-12">
+                    <div class="card-deck" >
+                        <div class= "d-inline" *ngFor = "let actuBoxComponent of infosActus">
+                            <jhi-actu-box [actuBox] = actuBoxComponent> </jhi-actu-box>
+                        </div>     
+                    </div>
+            </article>
+        </div>     
+    </section>
+</div>
