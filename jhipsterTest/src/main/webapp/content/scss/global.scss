@@ -274,6 +274,16 @@ Content-item Ctrl-C Zeste du savoir ! A modifié
     white-space: nowrap;
     color: #424242;
 }
+/* ==========================================================================
+create article
+========================================================================== */
+#createSuccess {
+    display: none;
+}
+#createError {
+    display: none;
+}
+
 /* jhipster-needle-scss-add-main JHipster will add new css style */
 /* ==========================================================================
 app-container, side-menu
