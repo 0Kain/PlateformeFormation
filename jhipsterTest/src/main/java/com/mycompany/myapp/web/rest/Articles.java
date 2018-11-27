@@ -25,7 +25,7 @@ public class Articles {
     public String createArticle(@RequestParam(value = "title") String title,
     @RequestParam(value = "content") String content,
     @RequestParam(value = "topics") String[] topics,
-    @RequestParam(value = "title") String[] keywords)
+    @RequestParam(value = "keywords") String[] keywords)
     {
         JSONObject obj = new JSONObject();
 
