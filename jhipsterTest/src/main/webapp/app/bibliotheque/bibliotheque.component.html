@@ -1,3 +1,20 @@
-<p>
-  bibliotheque works!
-</p>
+<section class ="row">
+    <div class = "col-md-12">
+        <div class= "row">
+        <div class ="col-md-6">
+            <div class = "container">
+                <div *ngFor = "let actuBoxComponent of infosActus">
+                    <jhi-cours [actuBox] = actuBoxComponent> </jhi-cours>
+                </div>     
+            </div>
+        </div>
+        <div class = "col-md-6">
+                <div class = "container">
+                    <div *ngFor = "let actuBoxComponent of infosActus">
+                        <jhi-cours [actuBox] = actuBoxComponent> </jhi-cours>
+                    </div>     
+                </div>
+            </div>
+    </div>
+</div>
+</section>
