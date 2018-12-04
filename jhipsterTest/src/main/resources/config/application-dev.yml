@@ -23,7 +23,7 @@ eureka:
     instance:
         prefer-ip-address: true
     client:
-        enabled: false # By default, the JHipster Registry is not used in the "dev" profile
+        enabled: true # By default, the JHipster Registry is not used in the "dev" profile
         service-url:
             defaultZone: http://admin:${jhipster.registry.password}@localhost:8761/eureka/
 
@@ -69,8 +69,8 @@ spring:
     mail:
         host: localhost
         port: 25
-        username:
-        password:
+        username: kain.birah@gmail.com
+        password: Jeanne05Kour
     messages:
         cache-duration: PT1S # 1 second, see the ISO 8601 standard
     thymeleaf:
