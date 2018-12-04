@@ -27,14 +27,17 @@ public class Articles {
     @RequestParam(value = "topics") String[] topics,
     @RequestParam(value = "keywords") String[] keywords)
     {
+        
         JSONObject obj = new JSONObject();
-
-
-
-        obj.put("title",title);
-        obj.put("content",content);
-        obj.put("topics",JSONify(topics));
+        
+        obj.put("sujet",JSONify(topics));
+        obj.put("titre",title);
         obj.put("keywords",JSONify(keywords));
+        obj.put("contenu",content);
+        
+        //put in db
+        DBConnection.insert("articles",obj);
+
         return obj.toString();
     }
 
