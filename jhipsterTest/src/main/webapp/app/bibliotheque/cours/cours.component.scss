@@ -1,0 +1,50 @@
+.marginCateg {
+    margin-left: 7px;
+}
+
+.marginText {
+    margin-left: 10px;
+}
+
+.dimCard {
+    //width: 100%;
+    height: 7rem;
+}
+
+.dimCardbody {
+    width: 75%;
+    height: 7rem;
+}
+.dimImage {
+    max-width: 100% \9;
+    max-height: 100%;
+}
+
+.square {
+    height: 120px;
+    width: 120px;
+}
+.dimTitle {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.paddingCard {
+    padding: 5px;
+}
+
+.truncate {
+    max-width: 75%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.table-layout {
+    display: table;
+    width: 75%;
+}
+.table-layout .table-cell {
+    display: table-cell;
+    width: 25%;
+}
