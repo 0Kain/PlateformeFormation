@@ -21,6 +21,8 @@ public class DBConnection {
         java.sql.Connection conn = null;
         java.sql.Statement stmt = null;
 
+        System.out.println("Trying to insert data in db");
+
         try{
             //STEP 2: Register JDBC driver
             Class.forName(JDBC_DRIVER);
