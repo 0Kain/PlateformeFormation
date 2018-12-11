@@ -18,6 +18,7 @@
     "@fortawesome/angular-fontawesome": "0.2.0",
     "@fortawesome/fontawesome-svg-core": "1.2.4",
     "@fortawesome/free-solid-svg-icons": "5.3.1",
+    "@kolkov/angular-editor": "^0.13.1",
     "@ng-bootstrap/ng-bootstrap": "3.0.0",
     "angular-froala-wysiwyg": "^2.9.1",
     "bootstrap": "^4.1.3",

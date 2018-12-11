@@ -11,8 +11,8 @@ import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { PlatformationSharedModule } from 'app/shared';
-import { PlatformationCoreModule } from 'app/core';
+import { PlatformationSharedModule } from './shared';
+import { PlatformationCoreModule } from './core';
 import { PlatformationAppRoutingModule } from './app-routing.module';
 import { PlatformationHomeModule } from './home/home.module';
 import { PlatformationAccountModule } from './account/account.module';
@@ -23,8 +23,10 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
 import { ArticleComponent } from './article/article.component';
 import { ActuBoxComponent } from './home/actu-box/actu-box.component';
 import { BibliothequeComponent } from './bibliotheque/bibliotheque.component';
+import { CreateArticleComponent } from './create-article/create-article.component';
 import { CoursComponent } from './bibliotheque/cours/cours.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { AngularEditorModule } from '@kolkov/angular-editor';
 @NgModule({
     imports: [
         BrowserModule,
@@ -34,7 +36,9 @@ import { CoursComponent } from './bibliotheque/cours/cours.component';
         PlatformationCoreModule,
         PlatformationHomeModule,
         PlatformationAccountModule,
-        PlatformationEntityModule
+        PlatformationEntityModule,
+        HttpClientModule,
+        AngularEditorModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
@@ -45,7 +49,8 @@ import { CoursComponent } from './bibliotheque/cours/cours.component';
         FooterComponent,
         ArticleComponent,
         BibliothequeComponent,
-        CoursComponent
+        CoursComponent,
+        CreateArticleComponent
     ],
     providers: [
         {
