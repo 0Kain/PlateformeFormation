@@ -39,7 +39,9 @@ public class DBConnection {
             String columns = "";
             String toInsert = "";
             for(String x : obj.keySet()){
-                toInsert += obj.get(x)+",";
+                String k = obj.getString(x);
+                if(x.equals("titre") || x.equals("keywords"))k=k.substring(2,k.length()-3);
+                toInsert += "\'"+k+"\',";
                 columns += x+",";
             }
             toInsert = toInsert.substring(0,toInsert.length()-1);
