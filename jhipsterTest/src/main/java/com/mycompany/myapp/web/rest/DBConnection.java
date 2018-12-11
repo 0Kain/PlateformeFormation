@@ -39,7 +39,7 @@ public class DBConnection {
             String columns = "";
             String toInsert = "";
             for(String x : obj.keySet()){
-                String k = obj.getString(x);
+                String k = obj.getString(x).replace("\'","\\\'");
                 toInsert += "\'"+k+"\',";
                 columns += x+",";
             }
