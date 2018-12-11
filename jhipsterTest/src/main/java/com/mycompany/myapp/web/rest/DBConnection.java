@@ -40,8 +40,12 @@ public class DBConnection {
             String toInsert = "";
             for(String x : obj.keySet()){
                 String k = obj.getString(x).replace("\'","\\\'");
-                if(x.equals("sujet") || x.equals("keywords"))k=k.substring(3,k.length()-3);//retirer les crochets et accolades créées par le formatage JSON
-                toInsert += "\'"+k+"\',";
+                if(x.equals("sujet") || x.equals("keywords")){
+                //retirer les crochets et accolades créées par le formatage JSON
+                    toInsert += "\'"+k.substring(2,k.length()-2)+"\',";
+                }else{
+                    toInsert += "\'"+k+"\',";
+                }
                 columns += x+",";
             }
             toInsert = toInsert.substring(0,toInsert.length()-1);
