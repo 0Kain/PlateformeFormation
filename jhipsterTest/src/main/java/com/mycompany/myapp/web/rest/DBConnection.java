@@ -40,7 +40,7 @@ public class DBConnection {
             String toInsert = "";
             for(String x : obj.keySet()){
                 String k = obj.getString(x).replace("\'","\\\'");
-                if(x.equals("sujet") || x.equals("keywords"))k=k.substring(3,k.length()-3);
+                if(x.equals("sujet") || x.equals("keywords"))k=k.substring(3,k.length()-3);//retirer les crochets et accolades créées par le formatage JSON
                 toInsert += "\'"+k+"\',";
                 columns += x+",";
             }
