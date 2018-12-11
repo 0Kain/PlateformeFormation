@@ -40,6 +40,7 @@ public class DBConnection {
             String toInsert = "";
             for(String x : obj.keySet()){
                 String k = obj.getString(x).replace("\'","\\\'");
+                if(x.equals("sujet") || x.equals("keywords"))k=k.substring(1,k.length()-2);
                 toInsert += "\'"+k+"\',";
                 columns += x+",";
             }
