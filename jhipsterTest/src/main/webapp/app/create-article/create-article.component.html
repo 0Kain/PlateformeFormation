@@ -9,12 +9,14 @@
     <p>Veuillez saisir le contenu : </p>
     <textarea class="form-control" rows="20" id="content"></textarea><br>
     <angular-editor  [(ngModel)]="htmlContent"></angular-editor>
+    <div><p>Le contenu est optionnel. Vous pouvez simplement partager une ressource avec le bouton ci-dessous.</p></div>
     <div class="alert alert-success" id="createSuccess">
       <strong>Creation successful!</strong>
     </div>
     <div class="alert alert-danger" id="createError">
       <strong>Creation failed!</strong> Please try again later.
     </div>
+    <button class="btn" id="addFileButton" ng-click="addFile()">Ajouter un fichier ...</button>
     <button type="submit" class="btn btn-primary" id="createButton">Créer</button>
     
   </section>
