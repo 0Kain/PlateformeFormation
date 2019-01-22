@@ -27,18 +27,25 @@ public class Articles {
     @RequestParam(value = "topics") String[] topics,
     @RequestParam(value = "keywords") String[] keywords)
     {
-        
+
         JSONObject obj = new JSONObject();
-        
+
         obj.put("sujet",JSONify(topics));
         obj.put("titre",title);
         obj.put("keywords",JSONify(keywords));
         obj.put("contenu",content);
-        
+
         //put in db
         DBConnection.insert("articles",obj);
 
         return obj.toString();
+    }
+
+    @RequestMapping(path="/all", produces={"application/JSON"})
+    public String createArticle(){
+        resultSetToJSON(DBConnection.getArticles());
+
+        return "";
     }
 
     /**
@@ -46,11 +53,29 @@ public class Articles {
      */
     private String JSONify(String[] list){
         String res = "[";
-        
+
         for(String s : list){
             res+="{"+s+"},";
         }
-        
+
         return res.substring(0,res.length()-1)+"]";
+    }
+
+    /**
+    * ResultSet to JSON
+    */
+    public static JSONArray resultSetToJSON(ResultSet resultSet)
+            throws Exception {
+        JSONArray jsonArray = new JSONArray();
+        while (resultSet.next()) {
+            int total_rows = resultSet.getMetaData().getColumnCount();
+            for (int i = 0; i < total_rows; i++) {
+                JSONObject obj = new JSONObject();
+                obj.put(resultSet.getMetaData().getColumnLabel(i + 1)
+                        .toLowerCase(), resultSet.getObject(i + 1));
+                jsonArray.put(obj);
+            }
+        }
+        return jsonArray;
     }
 }

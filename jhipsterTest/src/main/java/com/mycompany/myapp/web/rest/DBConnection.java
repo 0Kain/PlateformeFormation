@@ -11,8 +11,8 @@ import java.sql.*;
 //@Secured(AuthoritiesConstants.ADMIN)
 @RequestMapping("/api/db")
 public class DBConnection {
-    
-    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+
+    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
     static final String DB_URL = "jdbc:mysql://localhost:3307/platformation?useUnicode=true&characterEncoding=utf8&useSSL=false";
     static final String USER = "root";
     static final String PASS = "platformation";
@@ -26,16 +26,16 @@ public class DBConnection {
         try{
             //STEP 2: Register JDBC driver
             Class.forName(JDBC_DRIVER);
-      
+
             //STEP 3: Open a connection
             System.out.println("Connecting to a selected database...");
             conn = DriverManager.getConnection(DB_URL, USER, PASS);
             System.out.println("Connected database successfully...");
-            
+
             //STEP 4: Execute a query
             System.out.println("Inserting records into the table...");
             stmt = conn.createStatement();
-            
+
             String columns = "";
             String toInsert = "";
             for(String x : obj.keySet()){
@@ -55,7 +55,7 @@ public class DBConnection {
                          ") VALUES (" + toInsert + ")";
             stmt.executeUpdate(sql);
             System.out.println("Inserted records into the table...");
-      
+
          }catch(SQLException se){
             //Handle errors for JDBC
             se.printStackTrace();
@@ -76,6 +76,52 @@ public class DBConnection {
                se.printStackTrace();
             }//end finally try
          }
-    } 
+    }
+
+    static ResultSet getArticles(){
+      java.sql.Connection conn = null;
+      java.sql.Statement stmt = null;
+
+      System.out.println("Trying to get data from db");
+
+      try{
+          //STEP 2: Register JDBC driver
+          Class.forName(JDBC_DRIVER);
+
+          //STEP 3: Open a connection
+          System.out.println("Connecting to a selected database...");
+          conn = DriverManager.getConnection(DB_URL, USER, PASS);
+          System.out.println("Connected database successfully...");
+
+          //STEP 4: Execute a query
+          System.out.println("Gettings articles from the table...");
+          stmt = conn.createStatement();
+
+          String sql = "SELECT * FROM articles;";
+          ResultSet rs = stmt.executeQuery(sql);
+          System.out.println("Got articles from db...");
+          return rs;
+
+      }catch(SQLException se){
+         //Handle errors for JDBC
+         se.printStackTrace();
+      }catch(Exception e){
+         //Handle errors for Class.forName
+         e.printStackTrace();
+      }finally{
+         //finally block used to close resources
+         try{
+            if(stmt!=null)
+               conn.close();
+         }catch(SQLException se){
+         }// do nothing
+         try{
+            if(conn!=null)
+               conn.close();
+         }catch(SQLException se){
+            se.printStackTrace();
+         }//end finally try
+        }
+    }
 
 }
