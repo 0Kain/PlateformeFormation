@@ -1,4 +1,8 @@
-<form name="form" role="form" (ngSubmit)="validateArticle()"  #registerForm="ngForm">
+<form name="form2" role="form" (ngSubmit)="addFile()">
+  <button type="submit" class="btn" id="addFileButton" >Ajouter un fichier ...</button><br/>
+</form>
+
+<form name="form" role="form" (ngSubmit)="validateArticle()" #registerForm="ngForm">
   <section class = "offset-md-1 col-md-11">
     <p>Veuillez saisir le titre de votre article : </p>
     <input class="form-control" type="text" id="title"><br>
@@ -9,8 +13,7 @@
     <p>Veuillez saisir le contenu : </p>
     <!-- <textarea class="form-control" rows="20" id="content"></textarea><br> -->
     <angular-editor  [(ngModel)]="htmlContent" id="content"></angular-editor>
-    <div style="margin-top: 20px;" ><p>Le contenu est optionnel. Vous pouvez simplement partager une ressource avec le bouton ci-dessous.</p></div>
-    <button type="button" class="btn" id="addFileButton" ng-click="console.log('help');">Ajouter un fichier ...</button><br/>
+    <div style="margin-top: 20px;" ><p>Le contenu est optionnel. Vous pouvez simplement partager une ressource avec le bouton en haut de cette page.</p></div>
     <button type="submit" style="margin-top: 20px;" class="btn btn-primary" id="createButton">Créer</button>
     <div class="alert alert-success" id="createSuccess">
       <strong>Creation successful!</strong>
