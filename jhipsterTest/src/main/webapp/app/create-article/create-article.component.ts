@@ -15,6 +15,10 @@ export class CreateArticleComponent implements OnInit {
 
     ngOnInit() {}
 
+    addFile() {
+        console.log('aaaaaaaaaaaaaaaaa clavier de ses mourts');
+    }
+
     validateArticle() {
         const title = (document.getElementById('title') as HTMLInputElement).value;
         const topics = (document.getElementById('topics') as HTMLInputElement).value;
