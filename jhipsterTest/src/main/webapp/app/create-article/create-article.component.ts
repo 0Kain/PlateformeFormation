@@ -19,12 +19,14 @@ export class CreateArticleComponent implements OnInit {
         const title = (document.getElementById('title') as HTMLInputElement).value;
         const topics = (document.getElementById('topics') as HTMLInputElement).value;
         const keywords = (document.getElementById('keywords') as HTMLInputElement).value;
-        const content = (document.getElementById('content') as HTMLInputElement).value;
+        const content = document.getElementById('content').children['angularEditor']['childNodes'][3]['firstElementChild']['innerHTML'];
+
         const params = new HttpParams()
             .set('title', title)
             .set('topics', topics)
             .set('content', content)
             .set('keywords', keywords);
+
         this.http.post<any>(SERVER_API_URL + '/api/articles/create', params).subscribe(response => {
             if (response) {
                 // bandeau vert ça marche magnifique
