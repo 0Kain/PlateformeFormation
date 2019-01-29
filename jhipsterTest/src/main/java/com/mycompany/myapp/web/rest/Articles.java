@@ -43,9 +43,9 @@ public class Articles {
 
     @RequestMapping(path="/all", produces={"application/JSON"})
     public String createArticle(){
-        resultSetToJSON(DBConnection.getArticles());
+        JSONArray listArticles = resultSetToJSON(DBConnection.getArticles());
 
-        return "";
+        return listArticles;
     }
 
     /**
