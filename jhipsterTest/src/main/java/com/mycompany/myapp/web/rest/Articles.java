@@ -48,9 +48,10 @@ public class Articles {
         JSONArray res = new JSONArray();
 
         
-        for(JSONObject elem : listArticles){
-            JSONArray categs = JSONify(elem.get("keywords").split("},{"),"categName");
-            String parsedContent = elem.get("contenu");
+        for(Object temp : listArticles){
+            JSONObject elem = new JSONObject((String) temp);
+            JSONArray categs = JSONify(((String)elem.get("keywords")).split("},{"),"categName");
+            String parsedContent = (String)elem.get("contenu");
             JSONObject obj = new JSONObject();
             obj.put("actuHeader",elem.get("titre"));
             obj.put("actuCategs",categs);
