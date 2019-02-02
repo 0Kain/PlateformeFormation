@@ -46,7 +46,7 @@ public class Articles {
         System.out.println("\n\n\n\n-------------------------\n\n");
         JSONArray listArticles = DBConnection.getArticles();
         JSONArray res = new JSONArray();
-        JSONArray categs = JSONify("categName",elem.get("keywords").split("},{"));
+        JSONArray categs = JSONify(elem.get("keywords").split("},{"),"categName");
 
         String parsedContent = elem.get("contenu");
         
@@ -64,11 +64,21 @@ public class Articles {
     /**
      * table to JSON
      */
-    private JSONArray JSONify(String categName,String[] list){
+    private JSONArray JSONify(String[] list,String categName){
         JSONArray res = new JSONArray();
 
         for(String s : list){
             res.put(new JSONObject("{"+categName+":"+s+"}"));
+        }
+
+        return res;
+    }
+
+    private JSONArray JSONify(String[] list){
+        JSONArray res = new JSONArray();
+
+        for(String s : list){
+            res.put(s);
         }
 
         return res;
