@@ -5,6 +5,7 @@ import { JhiEventManager } from 'ng-jhipster';
 import { LoginModalService, Principal, Account } from 'app/core';
 import { HttpClient } from '@angular/common/http';
 import { ActuBoxModel } from '../entities/actu-box.model';
+import { SERVER_API_URL } from 'app/app.constants';
 
 @Component({
     selector: 'jhi-home',
@@ -14,17 +15,19 @@ import { ActuBoxModel } from '../entities/actu-box.model';
 export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
-    http: HttpClient;
     infosActus: Array<ActuBoxModel>;
 
     constructor(
         private principal: Principal,
         private loginModalService: LoginModalService,
         private eventManager: JhiEventManager,
-        private _http: HttpClient
+        private http: HttpClient
     ) {
-        this.http = _http;
-        this.http.get('http://localhost:9000/data.json').subscribe((result: Array<ActuBoxModel>) => {
+        /*this.http.get('http://localhost:9000/data.json').subscribe((result: Array<ActuBoxModel>) => {
+            //observable/promise : s'abonner à un event et on attend la reception des données et on peut faire un traitement après
+            this.infosActus = result;
+        });*/
+        this.http.get(SERVER_API_URL + '/api/articles/all').subscribe((result: Array<ActuBoxModel>) => {
             //observable/promise : s'abonner à un event et on attend la reception des données et on peut faire un traitement après
             this.infosActus = result;
         });

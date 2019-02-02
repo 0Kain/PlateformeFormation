@@ -42,7 +42,7 @@ public class Articles {
     }
 
     @RequestMapping(path="/all", produces={"application/JSON"})
-    public String createArticle(){
+    public String getAllArticles(){
         JSONArray listArticles = DBConnection.getArticles();
         System.out.println('['+listArticles.join(", ")+']');
         System.out.println(listArticles.toString());
