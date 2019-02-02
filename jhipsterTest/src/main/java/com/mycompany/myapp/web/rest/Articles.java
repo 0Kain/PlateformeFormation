@@ -44,21 +44,32 @@ public class Articles {
     @RequestMapping(path="/all", produces={"application/JSON"})
     public String getAllArticles(){
         JSONArray listArticles = DBConnection.getArticles();
-        System.out.println('['+listArticles.join(", ")+']');
-        System.out.println(listArticles.toString());
-        return listArticles.toString();
+        JSONArray res = new JSONArray();
+        JSONArray categs = JSONify("categName",elem.get("keywords").split("},{"));
+
+        String parsedContent = elem.get("contenu");
+        
+        for(JSONObject elem : listArticles){
+            JSONObject obj = new JSONObject();
+            obj.put("actuHeader",elem.get("titre"));
+            obj.put("actuCategs",categs);
+            obj.put("actuText",parsedContent);
+            obj.put("actuDate",elem.get("date-modif"));
+            res.put(obj);
+        }
+        return res.toString();
     }
 
     /**
      * table to JSON
      */
-    private String JSONify(String[] list){
-        String res = "[";
+    private JSONArray JSONify(String categName,String[] list){
+        JSONArray res = new JSONArray();
 
         for(String s : list){
-            res+="{"+s+"},";
+            res.put(new JSONObject("{"+categName+":"+s+"}"));
         }
 
-        return res.substring(0,res.length()-1)+"]";
+        return res;
     }
 }
