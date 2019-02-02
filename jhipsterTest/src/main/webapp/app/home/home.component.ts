@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
             this.infosActus = result;
         });*/
         this.http.get(SERVER_API_URL + '/api/articles/all').subscribe((result: Array<ActuBoxModel>) => {
-            //observable/promise : s'abonner à un event et on attend la reception des données et on peut faire un traitement après
             this.infosActus = result;
         });
     }
