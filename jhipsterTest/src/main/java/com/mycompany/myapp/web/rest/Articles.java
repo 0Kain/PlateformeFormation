@@ -3,7 +3,7 @@ package com.mycompany.myapp.web.rest;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import com.mycompany.myapp.security.AuthoritiesConstants;
-import org.json.JSONObject;
+import org.json.*;
 import java.io.StringWriter;
 
 @RestController
@@ -43,9 +43,10 @@ public class Articles {
 
     @RequestMapping(path="/all", produces={"application/JSON"})
     public String createArticle(){
-        JSONArray listArticles = resultSetToJSON(DBConnection.getArticles());
-
-        return listArticles;
+        JSONArray listArticles = DBConnection.getArticles();
+        System.out.println('['+listArticles.join(", ")+']');
+        System.out.println(listArticles.toString());
+        return listArticles.toString();
     }
 
     /**
@@ -59,23 +60,5 @@ public class Articles {
         }
 
         return res.substring(0,res.length()-1)+"]";
-    }
-
-    /**
-    * ResultSet to JSON
-    */
-    public static JSONArray resultSetToJSON(ResultSet resultSet)
-            throws Exception {
-        JSONArray jsonArray = new JSONArray();
-        while (resultSet.next()) {
-            int total_rows = resultSet.getMetaData().getColumnCount();
-            for (int i = 0; i < total_rows; i++) {
-                JSONObject obj = new JSONObject();
-                obj.put(resultSet.getMetaData().getColumnLabel(i + 1)
-                        .toLowerCase(), resultSet.getObject(i + 1));
-                jsonArray.put(obj);
-            }
-        }
-        return jsonArray;
     }
 }

@@ -1,6 +1,6 @@
 package com.mycompany.myapp.web.rest;
 
-import org.json.JSONObject;
+import org.json.*;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import com.mycompany.myapp.security.AuthoritiesConstants;
@@ -78,7 +78,7 @@ public class DBConnection {
          }
     }
 
-    static ResultSet getArticles(){
+    static JSONArray getArticles(){
       java.sql.Connection conn = null;
       java.sql.Statement stmt = null;
 
@@ -100,7 +100,7 @@ public class DBConnection {
           String sql = "SELECT * FROM articles;";
           ResultSet rs = stmt.executeQuery(sql);
           System.out.println("Got articles from db...");
-          return rs;
+          return resultSetToJSON(rs);
 
       }catch(SQLException se){
          //Handle errors for JDBC
@@ -122,6 +122,25 @@ public class DBConnection {
             se.printStackTrace();
          }//end finally try
         }
+        return null;
+    }
+
+     /**
+    * ResultSet to JSON
+    */
+    public static JSONArray resultSetToJSON(ResultSet resultSet)
+            throws Exception {
+        JSONArray jsonArray = new JSONArray();
+        while (resultSet.next()) {
+            int total_rows = resultSet.getMetaData().getColumnCount();
+            for (int i = 0; i < total_rows; i++) {
+                JSONObject obj = new JSONObject();
+                obj.put(resultSet.getMetaData().getColumnLabel(i + 1)
+                        .toLowerCase(), resultSet.getObject(i + 1));
+                jsonArray.put(obj);
+            }
+        }
+        return jsonArray;
     }
 
 }
