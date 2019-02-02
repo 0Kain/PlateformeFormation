@@ -43,6 +43,7 @@ public class Articles {
 
     @RequestMapping(path="/all", produces={"application/JSON"})
     public String getAllArticles(){
+        System.out.println("\n\n\n\n-------------------------\n\n");
         JSONArray listArticles = DBConnection.getArticles();
         System.out.println('['+listArticles.join(", ")+']');
         System.out.println(listArticles.toString());
