@@ -49,7 +49,7 @@ public class Articles {
         
         for(Object temp : listArticles){
             JSONObject elem = new JSONObject((String) temp);
-            JSONArray categs = JSONify(((String) (elem.get("keywords"))).split("},{"),"categName");
+            JSONArray categs = JSONify(elem.getString("keywords").split("},{"),"categName");
             String parsedContent = (String) (elem.get("contenu"));
             JSONObject obj = new JSONObject();
             obj.put("actuHeader",elem.get("titre"));
