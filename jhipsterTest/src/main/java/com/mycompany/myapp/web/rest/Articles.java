@@ -46,11 +46,11 @@ public class Articles {
         System.out.println("\n\n\n\n-------------------------\n\n");
         JSONArray listArticles = DBConnection.getArticles();
         JSONArray res = new JSONArray();
-        JSONArray categs = JSONify(elem.get("keywords").split("},{"),"categName");
 
-        String parsedContent = elem.get("contenu");
         
         for(JSONObject elem : listArticles){
+            JSONArray categs = JSONify(elem.get("keywords").split("},{"),"categName");
+            String parsedContent = elem.get("contenu");
             JSONObject obj = new JSONObject();
             obj.put("actuHeader",elem.get("titre"));
             obj.put("actuCategs",categs);
