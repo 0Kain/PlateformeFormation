@@ -47,17 +47,79 @@ public class Articles {
         JSONArray listArticles = DBConnection.getArticles();
         JSONArray res = new JSONArray();
 
-        
-        for(Object temp : listArticles){
-            JSONObject elem = new JSONObject((String) temp);
-            JSONArray categs = JSONify(elem.getString("keywords").split("},{"),"categName");
-            String parsedContent = (String) (elem.get("contenu"));
-            JSONObject obj = new JSONObject();
-            obj.put("actuHeader",elem.get("titre"));
-            obj.put("actuCategs",categs);
-            obj.put("actuText",parsedContent);
-            obj.put("actuDate",elem.get("date-modif"));
-            res.put(obj);
+        System.out.println(listArticles + "\n");
+         
+        JSONObject obj = new JSONObject();
+        for(int count = 0; count < listArticles.length(); count++){
+            JSONObject jobj = new JSONObject();
+            switch (count % 10) {
+                case 0://id
+                    break;
+                case 1://sujet
+                    break;
+                case 2://titre
+                    jobj = (JSONObject) listArticles.get(count);
+                    if(!jobj.has("titre")){
+                        break;
+                    }
+                     obj.put("actuHeader", ((JSONObject) listArticles.get(count)).get("titre"));
+                    break;
+                case 3://keywords
+                    jobj = (JSONObject) listArticles.get(count);
+                    if(!jobj.has("keywords")){
+                        break;
+                    }
+                    System.out.println(jobj);
+                    String keywords = jobj.getString("keywords");
+                    JSONArray categs = new JSONArray();
+                    if(keywords.contains("},{")){
+                         categs = JSONify(keywords.split("\\},\\{"),"categName");
+                    }else {
+                        String[] a = new String[1];
+                        a[0] = keywords;
+                        categs = JSONify(a,"categName");
+                    }
+                    obj.put("actuCategs",categs);
+                    break;
+                case 4://auteur
+                    break;
+                case 5://date-creation
+                    break;
+                case 6://date-modif
+                    jobj = (JSONObject) listArticles.get(count);
+                    if(!jobj.has("date-modif")){
+                        break;
+                    }
+                    obj.put("actuDate", jobj.get("date-modif"));
+                    break;
+                case 7://contenu
+                    jobj = (JSONObject) listArticles.get(count);
+                    if(!jobj.has("contenu")){
+                        break;
+                    }
+                    String parsedContent = jobj.getString("contenu");
+                    obj.put("actuText",parsedContent);
+                    break;
+                case 8://reference
+                    break;
+                case 9://resume
+
+                    //faire des trucs avec resume
+
+                    //puis
+                    obj = new JSONObject();
+                    res.put(obj);
+                    break;
+            }
+            // JSONObject elem = new JSONObject(temp.toString());
+            // System.out.println(elem + "");
+            // JSONArray categs = JSONify(elem.getString("keywords").split("},{"),"categName");
+            // String parsedContent = (elem.get("contenu")).toString();
+            // JSONObject obj = new JSONObject();
+            // obj.put("actuHeader",elem.get("titre"));
+            // obj.put("actuCategs",categs);
+            // obj.put("actuText",parsedContent);
+            // obj.put("actuDate",elem.get("date-modif"));
         }
         return res.toString();
     }
