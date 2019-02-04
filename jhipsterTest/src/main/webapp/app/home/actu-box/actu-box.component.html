@@ -6,7 +6,8 @@
       <div class= "d-inline" *ngFor = "let actuCateg of infoActu?.actuCategs">
           <span class="badge badge-primary marginCateg">{{actuCateg.categName}}</span>
       </div>
-    <p class="card-text marginText">{{ infoActu?.actuText }}</p>
+    <!--<p class="card-text marginText">{{ infoActu?.actuText }}</p>-->
+    <p class="card-text marginText" [innerHTML]="infoActu?.actuText"></p>
     <p class="card-text marginText"><small class="text-muted">{{infoActu?.actuDate}}</small></p>
   </div>
 </div>
